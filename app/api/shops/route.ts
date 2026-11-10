@@ -118,8 +118,11 @@ export async function POST(request: Request) {
     // 1. Authenticate
     const auth = await authenticateOwner();
 
-    if (auth.response || !auth.user) {
+    if (auth.response) {
       return auth.response;
+    }
+    if(!auth.user){
+      return jsonError("احراز هویت انجام نشد.", 401)
     }
 
     const user = auth.user;

@@ -160,7 +160,7 @@ export default function HomePage() {
               <Link
                 href={`/items${query ? `?q=${encodeURIComponent(query)}` : ""}`}
                 aria-label="دیدن تمام نتایج اجناس"
-                className="rounded-xl w-[100%] flex justify-center items-center sm:hidden bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700"
+                className="rounded-xl w-full flex justify-center items-center sm:hidden bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700"
               >
                 جستجو
               </Link>

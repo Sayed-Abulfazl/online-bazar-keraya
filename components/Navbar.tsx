@@ -243,7 +243,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={handleAdminLogout}
-                className="rounded-lg px-3 py-2 text-sm font-semibold text-red-600 hover:bg-red-50"
+                className="rounded-lg px-3 py-2 text-sm font-semibold text-red-600"
               >
                 {"خروج"}
               </button>

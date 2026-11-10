@@ -111,7 +111,7 @@ export default function AdminLoginPage() {
             )}
           </label>
           {serverError && (
-            <p className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700">
+            <p className="rounded-xl border border-red-200 bg-red-100 p-3 text-sm font-medium text-red-700">
               {serverError}
             </p>
           )}

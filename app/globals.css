@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+ /* declare amiri font */
+@font-face {
+  font-family: "Amiri";
+  src: url("/fonts/Amiri-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; 
+  /* at first display default font, after loading display amiri font */
+}
+
+/* when not dark class on html tag */
+:root {
+  color-scheme: light;
+  --app-page: #f8fafc;
+  --app-surface: #ffffff;
+  --app-text: #111827;
+  --app-muted: #6b7280;
+  --app-border: #e5e7eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* when dark class be on html tag */
+html.dark {
+  color-scheme: dark;
+  --app-page: #111827;
+  --app-surface: #1f2937;
+  --app-text: #f3f4f6;
+  --app-muted: #cbd5e1;
+  --app-border: #374151;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--app-page);
+  color: var(--app-text);
+  font-family: Arial, Tahoma, sans-serif;
+  font-feature-settings: normal;
+  text-rendering: auto;
+}
+
+/* Amiri is reserved for these tags */
+h1, h2, h3 {
+  font-family: "Amiri", serif;
+  letter-spacing: 0;
+  line-height: 1.55;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+/* transparent highlight of some browsers of mobile when clicked */
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+::selection {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+/* Dark mode changes only colors, not font sizes, spacing, or element positions. */
+html.dark body {
+  background: var(--app-page);
+  color: var(--app-text);
+}
+
+html.dark .bg-white,
+html.dark .bg-white\/95 {
+  background-color: var(--app-surface) !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-gray-50 {
+  background-color: #172033 !important;
+}
+
+html.dark .text-gray-950,
+html.dark .text-gray-900,
+html.dark .text-slate-900,
+html.dark .text-gray-800,
+html.dark .text-slate-800 {
+  color: var(--app-text) !important;
+}
+
+html.dark .text-gray-700,
+html.dark .text-gray-600,
+html.dark .text-gray-500,
+html.dark .text-slate-700,
+html.dark .text-slate-600,
+html.dark .text-slate-500 {
+  color: var(--app-muted) !important;
+}
+
+html.dark .border-gray-100,
+html.dark .border-gray-200,
+html.dark .border-slate-100,
+html.dark .border-slate-200 {
+  border-color: var(--app-border) !important;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #111827;
+  color: var(--app-text);
+  border-color: var(--app-border);
+}
+
+
+/* Balanced dark palette: colors change, while the original layout and typography stay put. */
+html.dark {
+  --app-page: #101827;
+  --app-surface: #182235;
+  --app-text: #edf3fb;
+  --app-muted: #b7c4d8;
+  --app-border: #344258;
+}
+html.dark body { background: var(--app-page); color: var(--app-text); }
+html.dark .bg-white,
+html.dark .bg-white\/95,
+html.dark .bg-white\/90 { background-color: var(--app-surface) !important; }
+html.dark .bg-slate-50,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100 { background-color: #202c40 !important; }
+html.dark .bg-slate-100,
+html.dark .bg-gray-200 { background-color: #29364c !important; }
+html.dark .bg-blue-50,
+html.dark .bg-indigo-50 { background-color: #1b3659 !important; }
+html.dark .bg-blue-100,
+html.dark .bg-indigo-100 { background-color: #24466f !important; }
+html.dark .bg-amber-50 { background-color: #493a20 !important; }
+html.dark .bg-amber-100 { background-color: #5b4725 !important; }
+html.dark .bg-emerald-50 { background-color: #1c443b !important; }
+html.dark .bg-violet-50 { background-color: #342c55 !important; }
+html.dark .bg-slate-900,
+html.dark .bg-gray-900,
+html.dark .bg-slate-950 { background-color: #080e19 !important; }
+html.dark .text-gray-950,
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark .text-gray-700,
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700 { color: var(--app-text) !important; }
+html.dark .text-gray-600,
+html.dark .text-gray-500,
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-slate-400 { color: var(--app-muted) !important; }
+html.dark .text-blue-800,
+html.dark .text-blue-900,
+html.dark .text-indigo-800 { color: #a8d0ff !important; }
+html.dark .text-blue-700,
+html.dark .text-indigo-700 { color: #8fc1ff !important; }
+html.dark .text-amber-600,
+html.dark .text-amber-700,
+html.dark .text-amber-800 { color: #f9cc72 !important; }
+html.dark .text-red-600,
+html.dark .text-red-700 { color: #ff9ca8 !important; }
+html.dark .text-emerald-700,
+html.dark .text-emerald-800 { color: #8be0bf !important; }
+html.dark .text-violet-700,
+html.dark .text-violet-800 { color: #c4b5fd !important; }
+html.dark .border,
+html.dark .border-gray-100,
+html.dark .border-gray-200,
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-300 { border-color: var(--app-border) !important; }
+html.dark .divide-y > :not(:first-child) { border-color: var(--app-border) !important; }
+html.dark input,
+html.dark textarea,
+html.dark select { background-color: #101827; color: var(--app-text); border-color: var(--app-border); }
+html.dark input::placeholder,
+html.dark textarea::placeholder { color: #8291a8; }
+html.dark .hover\:bg-gray-50:hover,
+html.dark .hover\:bg-slate-50:hover,
+html.dark .hover\:bg-gray-100:hover,
+html.dark .hover\:bg-slate-100:hover { background-color: #2a3850 !important; }
+html.dark .hover\:bg-blue-50:hover { background-color: #2a3850 !important; }
+html.dark .bg-gradient-to-b { background-image: linear-gradient(to bottom, #14223a, #101827) !important; }
+html.dark .shadow-sm,
+html.dark .shadow-md,
+html.dark .shadow-lg,
+html.dark .shadow-xl,
+html.dark .shadow-2xl { --tw-shadow-color: rgb(0 0 0 / 0.2); }
+
+/* Keep layouts comfortable and stable on narrow mobile screens. */
+html, body { width: 100%; max-width: 100%; }
+body { overflow-x: clip; }
+input, textarea, select, button { min-width: 0; }
+
+@media (max-width: 640px) {
+  h1 { overflow-wrap: anywhere; }
+  main, section { scroll-margin-top: 4.5rem; }
+  input, textarea, select { font-size: 16px; }
+  button, a { touch-action: manipulation; }
+  .about-page h1, .contact-page h1 { font-size: clamp(1.9rem, 8vw, 2.5rem); line-height: 1.35; }
+  .about-page h2, .contact-page h2 { overflow-wrap: anywhere; }
+  .about-page section > div, .contact-page main { min-width: 0; }
+}
+
+html.dark .bg-white\/70 { background-color: rgb(24 34 53 / 0.92) !important; }
+html.dark .bg-blue-50\/70 { background-color: #172942 !important; }
+html.dark .bg-emerald-100 { background-color: #255647 !important; }
+html.dark .bg-red-100 { background-color: #5a3039 !important; }
+html.dark .bg-violet-100 { background-color: #443765 !important; }
+html.dark .bg-amber-100 { background-color: #5b4725 !important; }
+html.dark .text-blue-950 { color: #d7e9ff !important; }
+html.dark .text-slate-950 { color: #f4f7fb !important; }
+html.dark .text-red-500 { color: #ff9ca8 !important; }
+html.dark .text-emerald-800 { color: #a5f3d0 !important; }
+html.dark [class*="border-slate-"],
+html.dark [class*="border-gray-"],
+html.dark [class*="border-blue-100"],
+html.dark [class*="border-amber-200"],
+html.dark [class*="border-red-200"],
+html.dark [class*="border-emerald-200"] { border-color: var(--app-border) !important; }
+
+html.dark [data-sonner-toast] { background: #182235 !important; color: #edf3fb !important; border-color: #344258 !important; }
+html.dark [data-sonner-toast] [data-title] { color: #edf3fb !important; }
+html.dark [data-sonner-toast] [data-description] { color: #b7c4d8 !important; }
+
+/* Dark-theme fixes for About and Contact pages */
+.about-page, .contact-page {
+  background-color: var(--app-page) !important;
+  color: var(--app-text);
+}
+html.dark .about-page .bg-\[\#faf9f7\] { background-color: #182235 !important; }
+html.dark .about-page .border-amber-100 { border-color: var(--app-border) !important; }
+html.dark .about-page .border-white { border-color: var(--app-border) !important; }
+html.dark .contact-page .bg-blue-50 { background-color: #1b3659 !important; }
+html.dark .contact-page .text-blue-700 { color: #b9d9ff !important; }
+html.dark .contact-page .text-blue-400 { color: #9ecbff !important; }
+html.dark .contact-page .bg-slate-50 { background-color: #182235 !important; }
+html.dark .contact-page .border-blue-200 { border-color: #35577e !important; }
+html.dark .contact-page .text-slate-400 { color: #b7c4d8 !important; }
+html.dark .contact-page .text-slate-500 { color: #b7c4d8 !important; }
+
+
+/* The application is Persian-only and uses right-to-left layout. */
+html, body { direction: rtl; }

@@ -10,6 +10,8 @@ import {
   ArrowLeft,
   MapPin,
   ShoppingCart,
+  StoreIcon,
+  ShoppingCartPlusIcon,
 } from "lucide-react";
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
@@ -86,7 +88,7 @@ export default function HomePage() {
               ببینید انتخاب‌ هایتان را به سبد اضافه کنید و درخواست کرایه
               بفرستید.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 sm:flex flex-wrap items-center gap-3 hidden">
               <Link
                 href="/items"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 font-bold text-blue-950 hover:bg-blue-50"
@@ -106,10 +108,37 @@ export default function HomePage() {
                 <ShoppingCart size={18} /> سبد انتخاب‌ها
               </Link>
             </div>
+
+            <div className="grid grid-cols-3 justify-center items-center gap-3 mt-6 sm:hidden">
+              <Link
+                href={"/items"}
+                className="bg-[rgba(255,255,255,0.1)] p-5 rounded-2xl flex justify-center items-center"
+              >
+                <div>
+                  <ShoppingCartPlusIcon size={20} color="white" />
+                </div>
+              </Link>
+              <Link
+                href={"/shops"}
+                className="bg-[rgba(255,255,255,0.1)] p-5 rounded-2xl flex justify-center items-center"
+              >
+                <div>
+                  <StoreIcon size={20} color="white" />
+                </div>
+              </Link>
+              <Link
+                href={"/cart"}
+                className="bg-[rgba(255,255,255,0.1)] p-5 rounded-2xl flex justify-center items-center"
+              >
+                <div>
+                  <ShoppingCart size={20} color="white" />
+                </div>
+              </Link>
+            </div>
           </div>
           <div className="relative mt-10 max-w-3xl">
             <label className="flex items-center gap-3 rounded-2xl bg-white p-2 text-slate-900 shadow-2xl">
-              <span className="px-3 text-blue-700">
+              <span className="ps-3 text-blue-700">
                 <Search size={22} />
               </span>
               <input
@@ -122,11 +151,20 @@ export default function HomePage() {
               <Link
                 href={`/items${query ? `?q=${encodeURIComponent(query)}` : ""}`}
                 aria-label="دیدن تمام نتایج اجناس"
-                className="rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700"
+                className="hidden sm:block rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700"
               >
                 جستجو
               </Link>
             </label>
+            <div className="flex justify-center items-center mt-3">
+              <Link
+                href={`/items${query ? `?q=${encodeURIComponent(query)}` : ""}`}
+                aria-label="دیدن تمام نتایج اجناس"
+                className="rounded-xl w-[100%] flex justify-center items-center sm:hidden bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700"
+              >
+                جستجو
+              </Link>
+            </div>
           </div>
         </div>
       </section>

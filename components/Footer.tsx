@@ -8,31 +8,46 @@ import {
 } from "@/constants";
 
 import {
-  Send,
-  MessageCircle,
   Phone,
   Mail,
   MapPin,
   ShieldCheck,
-  Store
+  Store,
 } from "lucide-react";
+
+import { FaFacebook , FaInstagram, FaTelegram, FaWhatsapp, FaYoutube} from "react-icons/fa";
 
 const socialItems = [
   {
     label: "WhatsApp",
     href: SOCIAL_LINKS.whatsapp,
-    icon: MessageCircle,
+    icon: FaWhatsapp,
     hover: "hover:bg-emerald-600",
   },
   {
     label: "Telegram",
     href: SOCIAL_LINKS.telegram,
-    icon: Send,
+    icon: FaTelegram,
     hover: "hover:bg-sky-500",
   },
-  // { label: "Facebook", href: SOCIAL_LINKS.facebook, icon: Facebook, hover: "hover:bg-blue-600" },
-  // { label: "YouTube", href: SOCIAL_LINKS.youtube, icon: Youtube, hover: "hover:bg-red-600" },
-  // { label: "Instagram", href: SOCIAL_LINKS.instagram, icon: Instagram, hover: "hover:bg-pink-600" },
+  {
+    label: "Facebook",
+    href: SOCIAL_LINKS.facebook,
+    icon: FaFacebook,
+    hover: "hover:bg-blue-600",
+  },
+  {
+    label: "YouTube",
+    href: SOCIAL_LINKS.youtube,
+    icon: FaYoutube,
+    hover: "hover:bg-red-600",
+  },
+  {
+    label: "Instagram",
+    href: SOCIAL_LINKS.instagram,
+    icon: FaInstagram,
+    hover: "hover:bg-pink-600",
+  },
 ];
 
 export default function Footer() {

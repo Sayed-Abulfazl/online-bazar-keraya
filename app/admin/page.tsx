@@ -1054,7 +1054,7 @@ function AdminPageContent() {
                         minLength={2}
                         maxLength={80}
                         className={`mt-2 w-full rounded-xl border bg-white px-3 py-2.5 outline-none focus:border-blue-500 ${adminFormErrors.name ? "border-red-400 bg-red-50" : "border-slate-200"}`}
-                        placeholder="مثلاً مدیر گزارش‌ها"
+                        placeholder="مثلاً احمد"
                       />
                       {adminFormErrors.name && (
                         <span className="mt-1 block text-xs font-medium text-red-600">

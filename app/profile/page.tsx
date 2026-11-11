@@ -4,7 +4,7 @@ import axios from "axios";
 import { z } from "zod";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Camera, Save, Trash2, UserRound } from "lucide-react";
+import { ArrowLeft, Camera, Save, Trash2, UserRound } from "lucide-react";
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -152,12 +152,21 @@ function ProfilePageContent() {
     <div className="min-h-screen bg-slate-50">
       <Navbar />
       <main className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
-        <div className="mb-7">
-          <p className="text-sm font-bold text-blue-700">حساب کاربری</p>
-          <h1 className="mt-2 text-3xl font-bold text-slate-900">پروفایل من</h1>
-          <p className="mt-2 text-slate-500">
-            معلومات حساب خود را مدیریت کنید.
-          </p>
+        <div className="mb-7 flex flex-row justify-between items-center">
+          <div>
+            <p className="text-sm font-bold text-blue-700">حساب کاربری</p>
+            <h1 className="mt-2 text-3xl font-bold text-slate-900">
+              پروفایل من
+            </h1>
+            <p className="mt-2 text-slate-500">
+              معلومات حساب خود را مدیریت کنید.
+            </p>
+          </div>
+          <div>
+            <button className="cursor-pointer me-6" onClick={() => router.back()}>
+              <ArrowLeft size={28} />
+            </button>
+          </div>
         </div>
         {loading ? (
           <div className="rounded-3xl bg-white p-10 text-center">

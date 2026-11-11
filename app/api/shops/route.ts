@@ -203,7 +203,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: true,
-        message: "مرکز کرایه با موفقیت ثبت شد.",
+        message: "مرکز کرایه با موفقیت ثبت و در انتظار تایید است.",
         shop: {
           id: String(shop._id),
           active: shop.active === true,

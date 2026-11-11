@@ -483,7 +483,7 @@ function AdminPageContent() {
             <p className="text-sm font-bold text-blue-700">مرکز نظارت</p>
             <h2 className="mt-1 text-3xl font-bold">گزارش و مدیریت سیستم</h2>
             <p className="mt-2 text-sm text-slate-500">
-              اطلاعات مشتریان، ارائه‌دهندگان، فروشگاه‌ها، اجناس، سفارش‌ها و
+              اطلاعات مشتریان، ارائه‌دهندگان، مراکز کرایی، اجناس، سفارش‌ها و
               پیام‌ها.
             </p>
           </div>

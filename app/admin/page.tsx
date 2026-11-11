@@ -180,7 +180,7 @@ function AdminPageContent() {
   useEffect(() => {
     const loadMethod = () => {
       void load();
-    }
+    };
     loadMethod();
   }, [load]);
 
@@ -694,28 +694,30 @@ function AdminPageContent() {
                           </span>
                           <ArrowUpRight size={16} className="text-slate-400" />
                         </Link>
-                        {admin?.role === "master" && shop.active && (
-                          <button
-                            disabled={busy === shop.id}
-                            onClick={() =>
-                              void remove("shops", shop.id, shop.name)
-                            }
-                            className="inline-flex items-center gap-2 self-start rounded-lg border border-red-200 px-3 py-2 text-sm font-bold text-red-600 hover:bg-red-50"
-                          >
-                            <Trash2 size={15} /> حذف
-                          </button>
-                        )}
-                        {admin?.role === "master" && shop.active && (
-                          <button
-                            disabled={busy === shop.id}
-                            onClick={() =>
-                              void moderateShop(shop.id, "deactivate")
-                            }
-                            className="rounded-lg border px-3 py-2 text-sm font-bold"
-                          >
-                            غیرفعال‌ سازی
-                          </button>
-                        )}
+                        <div className="flex gap-3">
+                          {admin?.role === "master" && shop.active && (
+                            <button
+                              disabled={busy === shop.id}
+                              onClick={() =>
+                                void remove("shops", shop.id, shop.name)
+                              }
+                              className="inline-flex items-center gap-2 self-start rounded-lg border border-red-200 px-3 py-2 text-sm font-bold text-red-600 hover:bg-red-50"
+                            >
+                              <Trash2 size={15} /> حذف
+                            </button>
+                          )}
+                          {admin?.role === "master" && shop.active && (
+                            <button
+                              disabled={busy === shop.id}
+                              onClick={() =>
+                                void moderateShop(shop.id, "deactivate")
+                              }
+                              className="rounded-lg border px-3 py-2 text-sm font-bold"
+                            >
+                              غیرفعال‌ سازی
+                            </button>
+                          )}
+                        </div>
                       </div>
                     ))}
                     {!shownShops.length && (
@@ -834,7 +836,10 @@ function AdminPageContent() {
                     <>
                       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                         {[
-                          { label: "تمام سفارش‌ ها", value: report.totalOrders },
+                          {
+                            label: "تمام سفارش‌ ها",
+                            value: report.totalOrders,
+                          },
                           {
                             label: "در انتظار پاسخ",
                             value: report.pendingCount,
@@ -867,7 +872,7 @@ function AdminPageContent() {
                           {
                             label: "مبلغ سفارش‌ های باز",
                             value: report.pendingAmount,
-                          }, 
+                          },
                           {
                             label: "مبلغ سفارش‌ های ردشده",
                             value: report.rejectedAmount,
@@ -897,10 +902,12 @@ function AdminPageContent() {
                               {order.shop} — {order.customer}
                             </h4>
                             <p className="mt-1 text-sm text-slate-500">
-                              ارائه‌ دهنده: {order.owner} · {order.customerEmail}
+                              ارائه‌ دهنده: {order.owner} ·{" "}
+                              {order.customerEmail}
                             </p>
                             <p className="mt-1 text-sm text-slate-500">
-                              آدرس {SHOP_LABEL}: {order.shopAddress || "ثبت نشده"}
+                              آدرس {SHOP_LABEL}:{" "}
+                              {order.shopAddress || "ثبت نشده"}
                             </p>
                             <p className="mt-1 text-sm text-slate-500">
                               آدرس مشتری: {order.customerAddress || "ثبت نشده"}

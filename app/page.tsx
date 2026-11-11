@@ -105,7 +105,7 @@ export default function HomePage() {
                 href="/cart"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/25 px-5 py-3.5 font-bold text-white hover:bg-white/10"
               >
-                <ShoppingCart size={18} /> سبد انتخاب‌ها
+                <ShoppingCart size={18} /> سبد انتخاب‌ ها
               </Link>
             </div>
 

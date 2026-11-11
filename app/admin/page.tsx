@@ -512,7 +512,7 @@ function AdminPageContent() {
                 role: "owner" as const,
               },
               {
-                label: "فروشگاه‌ها",
+                label: "مراکز کرایی",
                 value: stats.shops,
                 icon: <Store />,
                 tab: "shops" as Tab,
@@ -694,7 +694,7 @@ function AdminPageContent() {
                           </span>
                           <ArrowUpRight size={16} className="text-slate-400" />
                         </Link>
-                        {admin?.role === "master" && (
+                        {admin?.role === "master" && shop.active && (
                           <button
                             disabled={busy === shop.id}
                             onClick={() =>
@@ -713,7 +713,7 @@ function AdminPageContent() {
                             }
                             className="rounded-lg border px-3 py-2 text-sm font-bold"
                           >
-                            غیرفعال‌سازی
+                            غیرفعال‌ سازی
                           </button>
                         )}
                       </div>
@@ -771,7 +771,7 @@ function AdminPageContent() {
                         </div>
                       ))}
                     {!shops.some((shop) => shop.active === false) && (
-                      <Empty text="دکانی در انتظار تأیید نیست." />
+                      <Empty text="مرکزی در انتظار تأیید نیست." />
                     )}
                   </div>
                 </>
@@ -828,7 +828,7 @@ function AdminPageContent() {
               {tab === "orders" && (
                 <div className="p-4 sm:p-5">
                   <h3 className="mb-4 text-lg font-bold">
-                    گزارش سفارش‌ها و مبالغ
+                    گزارش سفارش‌ ها و مبالغ
                   </h3>
                   {report && (
                     <>

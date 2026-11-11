@@ -136,7 +136,7 @@ export default function ShopsPage() {
       Object.entries(form).forEach(([k, v]) => data.append(k, v));
       data.append("image", image);
       const response = await axios.post("/api/shops", data);
-      toast.success(response.data.message || "فروشگاه ثبت شد.");
+      toast.success(response.data.message || "فروشگاه ثبت شد و در انتظار تایید است.");
       close();
       await load();
     } catch (e) {
@@ -162,7 +162,7 @@ export default function ShopsPage() {
             <span className="text-blue-600">پیدا کنید</span>
           </h1>
           <p className="mt-4 max-w-2xl leading-8 text-slate-500">
-            مراکر کرایی را ببینید، وسایل مورد نیاز خود را پیدا کنید و قیمت کرایه
+            مراکز کرایی را ببینید، وسایل مورد نیاز خود را پیدا کنید و قیمت کرایه
             روزانه را بررسی کنید.
           </p>
           <div className="mt-7 flex max-w-3xl flex-col gap-3 sm:flex-row">

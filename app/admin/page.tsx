@@ -415,12 +415,12 @@ function AdminPageContent() {
 
   const tabs: { key: Tab; label: string; icon: ReactNode }[] = [
     { key: "users", label: "کاربران", icon: <Users size={17} /> },
-    { key: "shops", label: "فروشگاه‌ها", icon: <Store size={17} /> },
+    { key: "shops", label: "مراکز کرایی", icon: <Store size={17} /> },
     ...(admin?.role === "master"
       ? [
           {
             key: "pendingShops" as const,
-            label: "دکان‌های در انتظار تأیید",
+            label: "مراکز در انتظار تأیید",
             icon: <Clock3 size={17} />,
           },
         ]

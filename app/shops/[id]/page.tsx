@@ -244,7 +244,7 @@ export default function ShopDetailPage() {
                                       className="absolute inset-0 text-slate-300"
                                     />
                                     <span
-                                      className="absolute inset-y-0 left-0 overflow-hidden"
+                                      className="absolute inset-y-0 right-0 overflow-hidden"
                                       style={{ width: `${fill * 100}%` }}
                                     >
                                       <Star
